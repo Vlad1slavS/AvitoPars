@@ -1,11 +1,10 @@
-import telebot
 import os
+import time
+from urllib.parse import urlparse, urlunparse
 import requests
+import telebot
 from bs4 import BeautifulSoup
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
-import time
-import os
-from urllib.parse import urlparse, urlunparse
 
 BOT_TOKEN = os.getenv('BOT_TOKEN')
 CHAT_ID = os.getenv('CHAT_ID')
@@ -187,14 +186,14 @@ def main():
             url_index = (url_index + 1) % len(AVITO_URLS)
 
             # Ждём 60 секунд перед следующим запросом
-            time.sleep(30)
+            time.sleep(60)
 
         except requests.exceptions.RequestException as e:
             print(f"Ошибка HTTP-запроса: {e}")
-            time.sleep(30)  # Повторяем через 60 секунд
+            time.sleep(60)  # Повторяем через 60 секунд
         except Exception as e:
             print(f"Произошла ошибка: {e}")
-            time.sleep(30)
+            time.sleep(60)
 
 
 if __name__ == "__main__":
