@@ -1,4 +1,5 @@
 import telebot
+import os
 import requests
 from bs4 import BeautifulSoup
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
@@ -6,6 +7,8 @@ import time
 import os
 from urllib.parse import urlparse, urlunparse
 
+BOT_TOKEN = os.getenv('BOT_TOKEN')
+CHAT_ID = os.getenv('CHAT_ID')
 
 # Массив URL поиска на Авито
 AVITO_URLS = [
