@@ -1,4 +1,3 @@
-import datetime
 import telebot
 import requests
 from bs4 import BeautifulSoup
@@ -7,9 +6,6 @@ import time
 import os
 from urllib.parse import urlparse, urlunparse
 
-# Настройки Telegram бота
-BOT_TOKEN = ""  # Ваш токен бота
-CHAT_ID = ""  # Ваш ID чата
 
 # Массив URL поиска на Авито
 AVITO_URLS = [
